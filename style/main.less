@@ -21,6 +21,10 @@
 	font-weight: 700;
 }
 
+.ptseriffont {
+	.prserif_font();
+}
+
 body {
 	.relaway_font();
 	background-color: #fff9e7;
@@ -59,7 +63,28 @@ body {
 			flex-grow: 2;
 		}
 
-		.header_cart {}
+		.header_cart {
+			.quicksend_font();
+			color: @white;
+
+			i {
+				color: @yellow;
+			}
+
+			.ptseriffont {
+				font-style: italic;
+				text-decoration: underline;
+				color: @yellow
+			}
+
+			.cart_counter {
+				border-right: 1px dotted rgba(255, 255, 255, 0.5);
+				padding-left: 5px;
+				padding-right: 10px;
+				margin-right: 10px;
+			}
+		}
+
 
 		nav {
 			.quicksend_font();
@@ -73,6 +98,56 @@ body {
 					display: inline-block;
 					font-size: 13px;
 					margin: 0 17px;
+					border-top: 3px solid transparent;
+					position: relative;
+
+					ul.sub-menu {
+						&::before {
+							content: "";
+							display: block;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 0 6px 7px 6px;
+							border-color: transparent transparent #ffffff transparent;
+							position: absolute;
+							top: -7px;
+							left: 34px;
+						}
+
+						position: absolute;
+						top: 100%;
+						left: 0;
+						background: @white;
+						box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.07);
+						//display: none;
+
+						li {
+							margin: 0 25px;
+
+							&:hover {
+								border-top: 3px solid transparent;
+
+								a {
+									color: @orange;
+								}
+							}
+						}
+
+						a {
+							color: #7b7a79;
+
+						}
+					}
+
+					&:hover {
+						color: @yellow;
+						border-top: 3px solid @yellow;
+
+						a {
+							color: @yellow;
+						}
+					}
 
 					a {
 						color: #ffffff;
